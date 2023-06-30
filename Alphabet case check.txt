@@ -1,0 +1,17 @@
+“ Take an input character from keyboard and check weather it 
+is Upper case alphabet or lower case alphabet” 
+
+
+import java.util.Scanner;
+public class Ajit {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner (System.in);
+        char ch = sc.next().trim().charAt(0);
+        if (ch >= 'a' && ch <= 'z'){
+            System.out.println("Lowercase");
+        }
+        else {
+            System.out.println("Uppercase");
+        }
+    }
+} 

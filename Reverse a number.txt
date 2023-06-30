@@ -1,0 +1,23 @@
+Reverse a number 
+“ A number I input from the keyboard and Show the output as 
+Reverse of that number “ 
+Example :- Input :- 12345 
+ Output :- 54321
+
+
+
+
+import java.util.Scanner;
+public class Ajit {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int num = sc.nextInt();
+        int ans = 0;
+        while(num > 0){
+            int rem = num % 10;
+            num /= 10;
+            ans = ans * 10 + rem;
+        }
+        System.out.println(ans);
+    }
+}
