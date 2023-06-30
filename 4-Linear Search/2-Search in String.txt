@@ -1,0 +1,50 @@
+
+
+Search in String
+
+
+// Approach 1
+import java.util.*;
+public class Ajit{
+    public static void main(String[] args){
+        String str = "Ajit";
+        char target = 'o';
+        System.out.println(Search(str, target));
+    }
+    public static Boolean Search(String str, char target){
+        if(str.length() == 0){
+            return false;
+        }
+        for(int i = 0; i < str.length(); i++){
+            if(str.charAt(i) == target){
+                return true;
+            }
+        }
+        return false;
+    }
+}
+
+
+
+//Approach 2 : for each loop
+import java.util.*;
+public class Ajit{
+    public static void main(String[] args){
+        String str = "Ajit";
+        char target = 'i';
+        System.out.println(Search(str, target));
+        //System.out.println(Arrays.toString(str.toCharArray()));
+        //first converted the String to char array, and then the char array is printed with Arrays.toString() function
+    }
+    public static Boolean Search(String str, char target){
+        if(str.length() == 0){
+            return false;
+        }
+        for(char ch : str.toCharArray()){
+            if(ch == target){
+                return true;
+            }
+        }
+        return false;
+    }
+}

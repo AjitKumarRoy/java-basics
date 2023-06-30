@@ -1,0 +1,84 @@
+//even number of digits
+// https://leetcode.com/problems/find-numbers-with-even-number-of-digits/
+
+//Given an array nums of integers, return how many of them contain an even number of digits.
+Input: nums = [12,345,2,6,7896]
+Output: 2
+Explanation: 
+12 contains 2 digits (even number of digits). 
+345 contains 3 digits (odd number of digits). 
+2 contains 1 digit (odd number of digits). 
+6 contains 1 digit (odd number of digits). 
+7896 contains 4 digits (even number of digits). 
+Therefore only 12 and 7896 contain an even number of digits.
+
+
+
+
+
+
+import java.util.*;
+public class Ajit{
+    public static void main(String[] args){
+        int[] nums = {12,345,2,6,7896};
+        System.out.println(LinearSearch(nums));
+    }
+
+
+    //iterating over every elements of a array and checking if the number contains even no of digits
+    public static int LinearSearch(int[] arr){
+        int count = 0;
+
+        for(int i = 0; i < arr.length; i++){
+            int Digit = CountDigit(arr[i]); // counting the digits of an item in array
+            if(Even(Digit)){ //now checking if the item contains even no of digits
+                count++;
+            }
+        }
+        return count;
+    }
+
+    //function to check whether a number contains even no of digits or not
+    public static Boolean Even(int num){
+        /*
+        if(num % 2 == 0){
+            return true;
+        }
+        return false;
+        */
+
+        return num%2 == 0;
+    }
+
+    //function to count the digits in a number
+    public static int CountDigit(int num){
+
+        if(num == 0){ //because 0 is also a digit
+            return 1;
+        }
+
+
+        int count = 0;
+        while(num != 0){
+            count++;
+            num /= 10;
+        }
+        return count;
+    }
+}
+
+
+
+------------------------------------------
+
+
+//shortcut to find the number of digits
+    public static int CountDigit2(int num){
+        if(num == 0){
+            return 1;
+        }
+        if(num < 0){
+            num *= -1;
+        }
+        return (int)Math.log10(num)+1;
+    }

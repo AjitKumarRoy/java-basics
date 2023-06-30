@@ -1,0 +1,110 @@
+//search in the array : return the index if item found otherwise if item not found return -1
+
+import java.util.*;
+public class Ajit{
+    public static void main(String[] args){
+        int[] nums = {25, 40, 8, -1, 5, 0, -23, 34};
+        int target = 5 ;
+        int ans = LinearSearch(nums, target);
+
+        System.out.println(ans);
+    }
+    public static int LinearSearch(int[] arr, int target){
+        if(arr.length == 0){
+            return -1;
+        }
+
+        //run a for loop
+        for(int index = 0; index < arr.length; index++){
+            //check for element at every index if it is equal to target
+            int element = arr[index];
+            if(element == target){
+                return index;
+            }
+        }
+
+        //this line will execute if none of the return statements above have executed
+        //hence the target not found
+        return -1; //-1 can never be the index that's why i am returning this value
+    }
+}
+
+
+
+-------------------------------------------------------------------------------------------------------------------
+
+
+
+
+//Search the target and return the element itself
+
+import java.util.*;
+public class Ajit {
+    public static void main(String[] args) {
+        int[] nums = {25, 40, 8, -1, 5, 0, -23, 34};
+        int target = 40;
+        int ans = LinearSearch(nums, target);
+
+        System.out.println(ans);
+    }
+
+    public static int LinearSearch(int[] arr, int target) {
+        if (arr.length == 0) {
+            return Integer.MAX_VALUE;
+        }
+
+        //run a for loop
+        for (int element : arr) {
+            //check for element at every index if it is equal to target
+            if (element == target) {
+                return element;
+            }
+        }
+
+        //this line will execute if none of the return statements above have executed
+        //hence the target not found
+        return Integer.MAX_VALUE;
+    }
+}
+
+
+
+
+
+
+------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+//Search the target and return true if the target found and false if not found
+
+import java.util.*;
+public class Ajit {
+    public static void main(String[] args) {
+        int[] nums = {25, 40, 8, -1, 5, 0, -23, 34};
+        int target = 5;
+        Boolean ans = LinearSearch(nums, target);
+
+        System.out.println(ans);
+    }
+    public static Boolean LinearSearch(int[] arr, int target) {
+        if (arr.length == 0) {
+            return false;
+        }
+
+        //run a for loop
+        for (int element : arr) {
+            //check for element at every index if it is equal to target
+            if (element == target) {
+                return true;
+            }
+        }
+
+        //this line will execute if none of the return statements above have executed
+        //hence the target not found
+        return false;
+    }
+}
